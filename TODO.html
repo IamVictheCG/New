@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CG Todo App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="Mobilestyles.css" media="screen and (max-width: 1024px)">
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <div class="menu-item activeMenu" data-menu="home">Home</div>
+            <div class="menu-item" data-menu="projects">Projects</div>
+        </nav>
+
+        <main>
+            <h1 id="currentProjectHeader">All Todos</h1>
+            
+            <div class="main-content">
+                <button id="addTodoButton">+ Add Todo</button>
+                <div id="todoList"></div>
+            </div>
+
+            <div class="projects hidden">
+                <button id="addProjectButton">+ Add Project</button>
+                <div id="projectList"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Todo Modal -->
+    <div id="todoModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <form id="todoForm">
+                <input type="text" id="todoTitle" placeholder="Title" required>
+                <textarea id="todoDescription" placeholder="Description" required></textarea>
+                <input type="date" id="todoDueDate">
+                <select id="todoPriority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button type="submit">Save Todo</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal hidden">
+        <div class="modal-content">
+            <span id="closeProjectModal" class="close-button">&times;</span>
+            <form id="projectForm">
+                <input type="text" id="projectTitle" placeholder="Project Name" required>
+                <button type="submit">Save Project</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Active Todo View -->
+    <div id="blackBox" class="hidden"></div>
+    <div id="active-todo" class="hidden"></div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script type="module" src="/todo.js"></script>
+    <script type="module" src="/todo jQ.js.js"></script>
+</body>
+</html>
